@@ -9,10 +9,10 @@ import org.springframework.web.servlet.function.ServerResponse.ok
 
 val app = application(WebApplicationType.SERVLET) {
     beans {
-        //                bean<SampleService>()
+        // bean<SampleService>()
         bean("service-a") { SampleService("a") }
         bean("service-b") { SampleService("b") }
-//        bean<SampleHandler>()
+        // bean<SampleHandler>()
         bean("handler-a") { SampleHandler(ref("service-a")) }
         bean("handler-b") { SampleHandler(ref("service-b")) }
     }
@@ -31,7 +31,6 @@ val app = application(WebApplicationType.SERVLET) {
         }
     }
 }
-
 
 fun main() {
     app.run()
